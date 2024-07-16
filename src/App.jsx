@@ -34,6 +34,10 @@ function App() {
     }
   }, [selectedCity]);
 
+  useEffect(() => {
+    fetchUserGeolocation();
+  }, []);
+
   const fetchWeatherByCity = async (cityName) => {
     try {
       const data = await getWeatherData(cityName);
